@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,6 +128,7 @@
                         <div class="row">
 
                             <form action="#" class="p-5 bg-white" method="post">
+                                <?= csrfInputField(); ?>
 
 
                                 <h4>Sending Details</h4>

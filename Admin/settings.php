@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,6 +151,8 @@
                                                 <textarea onchange='settingsUpdate(this, "header_desc")' class="form-control" id="header_desc" required rows="3"><?php echo $res['header_desc']; ?></textarea>
                                             </div>
                                             <form class="mt-3" method="POST" enctype="multipart/form-data">
+                                                <?= csrfInputField(); ?>
+
                                                 <div class="mb-3">
                                                     <input type="hidden" name="field" id="field" value="header_image">
                                                     <label for="formFile" class="form-label">Header Image file</label>
@@ -157,6 +163,8 @@
                                             <img class="mt-2" width="200px" src='<?php echo $img_src; ?>'>
 
                                             <form class="mt-3" method="POST" enctype="multipart/form-data">
+                                                <?= csrfInputField(); ?>
+
                                                 <div class="mb-3">
                                                     <input type="hidden" name="field" id="field" value="sub_image">
                                                     <label for="formFile" class="form-label">Sub header Image file</label>
@@ -167,6 +175,8 @@
 
                                             <img class="mt-2" width="200px" src='<?php echo $imgs_src; ?>'>
                                             <form class="mt-3" method="POST" enctype="multipart/form-data">
+                                                <?= csrfInputField(); ?>
+
                                                 <div class="mb-3">
                                                     <input type="hidden" name="field" id="field" value="background_image">
                                                     <label for="formFile" class="form-label">Background Image</label>
@@ -202,6 +212,8 @@
                                                 <textarea onchange='settingsUpdate(this, "about_desc")' class="form-control" id="about_desc" required rows="3"><?php echo $res['about_desc']; ?></textarea>
 
                                                 <form class="mt-3" method="POST" enctype="multipart/form-data">
+                                                    <?= csrfInputField(); ?>
+
                                                     <div class="mb-3">
                                                         <input type="hidden" name="field" id="field" value="about_image">
                                                         <label for="formFile" class="form-label">About Image file</label>
@@ -276,10 +288,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="" method="post" id="basicform" data-parsley-validate="" enctype="multipart/form-data">
+                    <?= csrfInputField(); ?>
+                    
                     <div class="modal-body bg-white">
-                        <form action="" method="post" id="basicform" data-parsley-validate="">
-
-
                             <div class="col-md-12 mt-1">
                                 <input type="password" class="form-control" name="current_password" id="current_password" placeholder="Current Password" required>
                             </div>

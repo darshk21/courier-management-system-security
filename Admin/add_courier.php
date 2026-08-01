@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,6 +126,7 @@
                         <div class="row">
 
                             <form action="" method="post" id="basicform" data-parsley-validate="">
+                                <?= csrfInputField(); ?>
                                 <div class="form-group mt-2">
                                     <label for="inputName">Name</label>
                                     <input id="inputName" type="text" name="name" data-parsley-trigger="change" required="" placeholder="Enter Full Name" autocomplete="off" class="form-control">

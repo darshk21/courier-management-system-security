@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -203,9 +207,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="" method="post" id="basicform" data-parsley-validate="" enctype="multipart/form-data">
-                    <div class="modal-body bg-white">
-                        <form action="" method="post" id="basicform" data-parsley-validate="">
+                    <?= csrfInputField(); ?>
 
+                    <div class="modal-body bg-white">
                             <div class="col-md-12 mt-2">
                                 <label for="start_area" class="form-label">Start Area</label>
                                 <select id="start_area" class='form-control norad tx12' name="start_area" type='text'>
