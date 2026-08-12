@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -173,6 +177,7 @@
                     </div>
                     <div class="modal-body">
                         <form enctype="multipart/form-data" method="POST">
+                            <?= csrfInputField(); ?>
                             <div class="mb-3">
                                 <input onchange="insertImage(this.form);" class="form-control" name="file" type="file" id="formFile">
                             </div>

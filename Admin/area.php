@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,8 +181,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <form action="" method="post" id="basicform" data-parsley-validate="" enctype="multipart/form-data">
+                     <?= csrfInputField(); ?>
                     <div class="modal-body bg-white">
-                        <form action="" method="post" id="basicform" data-parsley-validate="">
                             <div class="col-md-12">
                                 <label for="area_name" class="form-label">Area Name</label>
                                 <input type="text" class="form-control" name="area_name" id="area_name" placeholder="Area Name" required>
