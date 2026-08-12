@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'pages/head.php'; ?>
@@ -144,6 +148,7 @@ $customer_id = $row['customer_id']; ?>
                                 
                             <form method="POST" class="row g-3 needs-validation" novalidate
                                     enctype="multipart/form-data">
+                                    <?= csrfInputField(); ?>
                                     <div class="col-md-12 mt-2">
                                         <label for="current_email" class="form-label">Current Email Address</label>
                                         <input type="email" class="form-control" name="current_email" id="current_email"

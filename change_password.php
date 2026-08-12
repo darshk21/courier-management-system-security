@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <?php include 'pages/head.php'; ?>
@@ -144,6 +148,7 @@ $customer_id = $row['customer_id']; ?>
                                 
                             <form method="POST" class="row g-3 needs-validation" novalidate
                                     enctype="multipart/form-data">
+                                    <?= csrfInputField(); ?>
                                     <div class="col-md-12 mt-2">
                                         <label for="current_password" class="form-label">Current Password Name</label>
                                         <input type="password" class="form-control" name="current_password"
