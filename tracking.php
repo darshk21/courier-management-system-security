@@ -225,9 +225,13 @@
 
     <script src="js/main.js"></script>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      integrity="sha384-X0GYfLSAvbuTj9jxOn3YMBiRKj0gCAMAgpDCtcNEP5xYN0udM2Y6RXowym23DQHJ"
+      crossorigin="anonymous">
 
+    <style>
+        
         body {
             background-color: #eeeeee;
             font-family: 'Open Sans', serif
