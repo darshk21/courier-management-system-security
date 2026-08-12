@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +14,8 @@
             <div class="d-flex justify-content-center align-items-center ">
                 <div class="col-md-5 p-5 shadow-sm border rounded-5 border-primary bg-white">
                     <h2 class="text-center mb-4 text-primary">Royal Express - Sign Up</h2>
-                    <form>
+                    <form method="post">
+                        <?= csrfInputField(); ?>
                         <div class="mb-3">
                             <label for="name" class="form-label">Full Name</label>
                             <input type="name" class="form-control border border-primary" name="name" id="name" aria-describedby="nameHelp">

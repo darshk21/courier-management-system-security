@@ -1,4 +1,8 @@
 <?php
+
+require_once __DIR__ . '/csrf.php';
+validateCsrfToken();
+
 if (session_id() == '') {
     session_start();
 }

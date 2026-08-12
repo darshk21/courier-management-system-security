@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../server/csrf.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +16,8 @@
       <div class="row h-100 mt-5">
         <div class="card">
           <form method="post">
+            <?= csrfInputField(); ?>
+
             <h2 class="title"> Sign In</h2>
 
             <div class="email-login">
